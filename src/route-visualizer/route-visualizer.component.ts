@@ -21,6 +21,7 @@ export class RouteVisualizerComponent {
   /** caption overrides for the card fields */
   @Input() labels: RouteVisualizerLabels = {};
 
+  @Input() showConnectorCost: boolean = true;
   /** emits the FULL route object of the clicked card */
   @Output() nodeClick = new EventEmitter<WarehouseRouteNode>();
 

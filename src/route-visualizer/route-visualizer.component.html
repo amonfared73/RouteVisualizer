@@ -41,7 +41,9 @@
             <p class="rv-empty">{{ lbl.empty }}</p>
         </ng-template>
 
-        <span class="rv-cost" *ngFor="let c of connectors" [style.left.px]="c.labelX" [style.top.px]="c.labelY"
-            [title]="lbl.cost">{{ fmt(c.cost) }}</span>
+        <div *ngIf="showConnectorCost">
+            <span class="rv-cost" *ngFor="let c of connectors" [style.left.px]="c.labelX" [style.top.px]="c.labelY"
+                [title]="lbl.cost">{{ fmt(c.cost) }}</span>
+        </div>
     </div>
 </div>
