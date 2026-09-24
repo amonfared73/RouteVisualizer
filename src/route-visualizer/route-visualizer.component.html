@@ -1,1 +1,47 @@
-<p>route-visualizer works!</p>
+<div class="rv-frame" [attr.dir]="rtl ? 'rtl' : 'ltr'" [class.rv-rtl]="rtl">
+    <header class="rv-header">
+        <svg class="rv-burger" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <h2 class="rv-title">{{ title }}</h2>
+        <span class="rv-count">{{ cards.length }} {{ lbl.stops }}</span>
+    </header>
+
+    <div class="rv-canvas" #canvas>
+        <svg class="rv-links" [attr.width]="svgWidth" [attr.height]="svgHeight" aria-hidden="true">
+            <defs>
+                <marker id="rv-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5"
+                    orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#2e86d9"></path>
+                </marker>
+            </defs>
+            <path *ngFor="let c of connectors" class="rv-link" [attr.d]="c.d" marker-end="url(#rv-arrow)"></path>
+        </svg>
+
+        <div class="rv-grid" *ngIf="cards.length > 0; else empty"
+            [style.grid-template-columns]="'repeat(' + cardsPerRow + ', minmax(185px, 1fr))'">
+            <article #card class="rv-card" *ngFor="let c of cards" [style.grid-column]="c.col + 1"
+                [style.grid-row]="c.row + 1" tabindex="0" role="button"
+                [attr.aria-label]="c.node.nodeName + ' — ' + c.node.productName" (click)="onCardClick(c.node)"
+                (keydown.enter)="onCardClick(c.node)">
+                <div class="rv-card-head">
+                    <span class="rv-badge">{{ fmt(c.node.order) }}</span>
+                    <span class="rv-name" [title]="c.node.nodeName">{{ c.node.nodeName }}</span>
+                </div>
+                <div class="rv-rows">
+                    <div class="rv-row"><span>{{ lbl.order }}</span><b>{{ fmt(c.node.order) }}</b></div>
+                    <div class="rv-row"><span>{{ lbl.productNumber }}</span><b>{{ c.node.productNumber }}</b></div>
+                    <div class="rv-row"><span>{{ lbl.productName }}</span><b>{{ c.node.productName }}</b></div>
+                    <div class="rv-row"><span>{{ lbl.amount }}</span><b>{{ fmt(c.node.amount) }}</b></div>
+                </div>
+            </article>
+        </div>
+
+        <ng-template #empty>
+            <p class="rv-empty">{{ lbl.empty }}</p>
+        </ng-template>
+
+        <span class="rv-cost" *ngFor="let c of connectors" [style.left.px]="c.labelX" [style.top.px]="c.labelY"
+            [title]="lbl.cost">{{ fmt(c.cost) }}</span>
+    </div>
+</div>

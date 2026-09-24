@@ -1,3 +1,17 @@
-<app-route-visualizer>
-    
+<app-route-visualizer
+  [routes]="routes"
+  [rtl]="true"
+  [cardsPerRow]="6"
+  [persianDigits]="true"
+  title="نمایش مسیر انبار"
+  [labels]="{
+    order: 'ترتیب',
+    productNumber: 'کد کالا',
+    productName: 'نام محصول',
+    amount: 'تعداد',
+    cost: 'هزینه محاسباتی',
+    stops: 'ایستگاه',
+    empty: 'گرهی برای نمایش وجود ندارد.'
+  }"
+  (nodeClick)="onNodeClicked($event)">
 </app-route-visualizer>

@@ -1,0 +1,194 @@
+:host {
+    display: block;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.rv-frame {
+    border: 1px solid #e3e9f2;
+    border-radius: 12px;
+    background: #f6f8fb;
+    box-shadow: 0 10px 30px rgba(16, 42, 78, .12);
+    overflow: hidden;
+}
+
+.rv-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    background: #1d3d5c;
+    color: #fff;
+}
+
+.rv-burger {
+    width: 20px;
+    height: 20px;
+    flex: none;
+    opacity: .9;
+}
+
+.rv-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .2px;
+}
+
+.rv-count {
+    margin-left: auto;
+    font-size: 12px;
+    background: rgba(255, 255, 255, .14);
+    padding: 3px 10px;
+    border-radius: 999px;
+}
+
+.rv-canvas {
+    position: relative;
+    padding: 30px 34px 36px;
+    background-image: linear-gradient(#e9edf3 1px, transparent 1px),
+        linear-gradient(90deg, #e9edf3 1px, transparent 1px);
+    background-size: 26px 26px;
+}
+
+.rv-links {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.rv-link {
+    fill: none;
+    stroke: #2e86d9;
+    stroke-width: 2;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+.rv-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 48px 64px;
+}
+
+.rv-card {
+    background: #fff;
+    border: 1px solid #dfe6ee;
+    border-radius: 10px;
+    padding: 12px 14px 10px;
+    box-shadow: 0 2px 8px rgba(18, 45, 82, .08);
+    cursor: pointer;
+    min-width: 0;
+    transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+
+.rv-card:hover,
+.rv-card:focus-visible {
+    transform: translateY(-3px);
+    border-color: #2e86d9;
+    box-shadow: 0 10px 22px rgba(46, 134, 217, .2);
+    outline: none;
+}
+
+.rv-card-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px dashed #e4eaf2;
+}
+
+.rv-badge {
+    flex: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #2e86d9;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+}
+
+.rv-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #16324f;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.rv-rows {
+    display: grid;
+    gap: 5px;
+}
+
+.rv-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.rv-row span {
+    color: #8a97a8;
+}
+
+.rv-row b {
+    color: #24384d;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.rv-cost {
+    position: absolute;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    background: #e7f2fd;
+    border: 1px solid #a9d0f5;
+    color: #1c5da0;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    padding: 4px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(18, 45, 82, .12);
+}
+
+.rv-count {
+    margin-inline-start: auto;
+    font-size: 12px;
+    background: rgba(255, 255, 255, .14);
+    padding: 3px 10px;
+    border-radius: 999px;
+}
+
+/* Persian connected script should never be letter-spaced */
+.rv-rtl .rv-title { letter-spacing: 0; }
+
+.rv-empty {
+    margin: 8px 4px;
+    color: #7d8aa0;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Persian connected script should never be letter-spaced */
+.rv-rtl .rv-title { letter-spacing: 0; }
+
+.rv-frame {
+    border: 1px solid #e3e9f2;
+    border-radius: 12px;
+    background: #f6f8fb;
+    box-shadow: 0 10px 30px rgba(16, 42, 78, .12);
+    overflow: hidden;
+    font-family: "Vazirmatn", "IRANSansX", "IRANSans", "Segoe UI", Roboto, Tahoma, Arial, sans-serif;
+}
