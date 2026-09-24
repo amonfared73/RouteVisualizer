@@ -33,6 +33,9 @@ export class AppComponent {
     { order: 16, productNumber: 'PRD-4155', productName: 'Oil Filter F-22', amount: 65, nodeName: 'Zone B / Shelf 1', computationalCost: 5 },
     { order: 17, productNumber: 'PRD-5023', productName: 'Drive Belt B7', amount: 30, nodeName: 'Zone C / Floor 1', computationalCost: 9 },
     { order: 18, productNumber: 'PRD-6011', productName: 'Air Valve V-9', amount: 22, nodeName: 'Zone C / Shelf 4', computationalCost: 7 },
+    { order: 19, productNumber: 'PRD-4155', productName: 'Oil Filter F-22', amount: 65, nodeName: 'Zone B / Shelf 1', computationalCost: 5 },
+    { order: 20, productNumber: 'PRD-5023', productName: 'Drive Belt B7', amount: 30, nodeName: 'Zone C / Floor 1', computationalCost: 9 },
+    { order: 21, productNumber: 'PRD-6011', productName: 'Air Valve V-9', amount: 22, nodeName: 'Zone C / Shelf 4', computationalCost: 7 },
   ];
 
   selectedNode: WarehouseRouteNode | null = null;
